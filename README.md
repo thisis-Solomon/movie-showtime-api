@@ -63,7 +63,7 @@ The following endpoints are available:
 }
 ```
 
-`movie/{id}`: Returns a specific movie by its ID which is the movie title
+`/movie/{id}`: Returns a specific movie by its ID which is the movie title
 
 ```json
 {
@@ -82,7 +82,7 @@ The following endpoints are available:
 }
 ```
 
-`movie/details/{id}`: Returns details of a specific movie by its ID which the movie title
+`/movie/details/{id}`: Returns details of a specific movie by its ID which the movie title
 
 ```json
 {
