@@ -14,7 +14,7 @@ The base URL for the API is `https://movieshowtimeapi.cyclic.app/api/`. All requ
 
 The following endpoints are available:
 
-- `/cinemas`: Returns a list of malls
+`/cinemas`: Returns a list of malls
 
 ```json
 {
