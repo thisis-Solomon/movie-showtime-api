@@ -10,9 +10,6 @@ You can use this API to:
 - Get additional information about the movie such as genre, duration, stars, directors, release date
 
 ## How to use the API and Examples
-
-To use the Movie Showtime API, you need to register for an API key and include it in every request. You can register for a free API key [here]().
-
 The base URL for the API is `https://movieshowtimeapi.cyclic.app/api/`. All requests and responses are in JSON format.
 
 The following endpoints are available:
