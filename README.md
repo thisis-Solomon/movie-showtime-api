@@ -1,21 +1,22 @@
-# Movie Showtime API
+# Movie Showtime API Documentation
+Welcome to the Movie Showtime API, a RESTful web service that provides information about movie showtimes in Zambian cinemas. This API is powered by data scraped from mydorpie.com, a leading mobile-friendly search platform for Southern Africa, offering a comprehensive movie guide, trailers, load-shedding schedules, weather, and more.
 
-The Movie Showtime API is a RESTful web service that allows you check out the movie you would want to see or is showing on your prefered Zambian cinemas. This API is based on the data scraped from [mydorpie.com](), a mobile-friendly search platform for Southern Africa that hosts the region's busiest independent movie guide with trailers, load-shedding schedules, weather and more.
+## Overview
+The Movie Showtime API enables you to:
 
-You can use this API to:
+1. Check for malls that have cinemas.
+2. Obtain information about cinemas in a mall, including name, address, and phone number.
+3. Retrieve details about movies in a cinema, such as title, rating, runtime, and showtimes.
+4. Access additional information about a movie, including genre, duration, stars, directors, and release date.
 
-- Check for malls that have cinemas
-- Get information about cinema in a mall, such as name, address, phone number.
-- Get information about movies in a cinema, such as title, rating, runtime, and showtimes
-- Get additional information about the movie such as genre, duration, stars, directors, release date
+### Base URL
+The base URL for the API is [movieshowtimeapi](https://movieshowtimeapi.cyclic.app/api/). All requests and responses are in JSON format.
 
-## How to use the API and Examples
-The base URL for the API is `https://movieshowtimeapi.cyclic.app/api/`. All requests and responses are in JSON format.
+### Endpoints
+#### 1. /cinemas
+**Description:** Returns a list of malls with cinemas.
 
-The following endpoints are available:
-
-`/cinemas`: Returns a list of malls
-
+Example Response:
 ```json
 {
   "count": 3,
@@ -33,19 +34,22 @@ The following endpoints are available:
 }
 ```
 
-`/movies?q=acardes+mall`: Returns details of a specific mall matched cinema name query and movies showing
+#### 2. /movies?q={mall_name}
+**Description:** Returns details of a specific mall matched by cinema name query and movies showing.
+
+Example Response:
 
 ```json
 {
   "movies_in_cinema": {
-  "movies_count": 10,
-  "cinema_information": [
+    "movies_count": 10,
+    "cinema_information": [
       {
         "cinema_banner": "https://pics.mydorpie.com/i/cinemas/numetro_logo640.png",
         "address": "Arcades Shopping Centre, Great East Road, Lusaka, Zambia"
       }
     ],
-  "movies_showing": [
+    "movies_showing": [
       {
         "movie_name": "2D - 57 Seconds",
         "movie_poster": "https://pics.mydorpie.com/i/movies/57-Seconds.jpg"
@@ -57,32 +61,38 @@ The following endpoints are available:
       {
         "movie_name": "2D - Expendables 4",
         "movie_poster": "https://pics.mydorpie.com/i/movies/Expendables-4.jpg"
-      },
+      }
     ]
   }
 }
 ```
 
-`/movie/{id}`: Returns a specific movie by its ID which is the movie title
+#### 3. /movie/{id}
+**Description:** Returns details of a specific movie by its ID (movie title).
+
+Example Response:
 
 ```json
 {
   "single_movie": {
     "movie_title": "2D - Expendables 4",
-    "story_line": "Armed with every weapon they can get their hands on and the skills to use them, The Expendables are the world’s last line of defense and the team that gets called when all other options are off the table. But new team members with new styles and tactics are going to give “new blood” a whole new meaning.",
-    "schedule": "Starting times for each show are listed. Popular movies often show on more than one screen on the same day, so start times may be close together.",
+    "story_line": "Armed with every weapon they can get their hands on and the skills to use them, The Expendables are the world’s last line of defense...",
+    "schedule": "Starting times for each show are listed. Popular movies often show on more than one screen on the same day...",
     "movie_times": [
       {
         "date": "Tue 17 Oct",
         "times": ["12:15", "17:30"]
       }
     ],
-    "disclaimer": "Please note that myDorpie cannot take responsibility for errors or unexpected changes to movie schedules. Cinemas may not update their schedules during load-shedding so it's best to contact the cinema or the mall beforehand if they don't have backup power."
+    "disclaimer": "Please note that myDorpie cannot take responsibility for errors or unexpected changes to movie schedules..."
   }
 }
 ```
 
-`/movie/details/{id}`: Returns details of a specific movie by its ID which the movie title
+#### 4. /movie/details/{id}
+**Description:** Returns additional details of a specific movie by its ID (movie title).
+
+Example Response:
 
 ```json
 {
@@ -91,13 +101,7 @@ The following endpoints are available:
     "movie_title": "The Nun ll",
     "category": ["HORROR"],
     "movie_description": "Four years after the events at the Abbey of St. Carta, Sister Irene returns once again and comes face to face with the demonic force Valak, the Nun.",
-    "core_stars": [
-      "Taissa Farmiga",
-      " Jonas Bloquet",
-      " Storm Reid",
-      " Anna Popplewell",
-      " Bonnie Aarons"
-    ],
+    "core_stars": ["Taissa Farmiga", "Jonas Bloquet", "Storm Reid", "Anna Popplewell", "Bonnie Aarons"],
     "release_date": "Fri 8 September 2023",
     "duration": "1 hour 50 minutes",
     "directed_by": ["Michael Chaves"]
@@ -105,5 +109,5 @@ The following endpoints are available:
 }
 ```
 
-## Feedback
-If you have any questions, suggestions, or issues with the Movie Showtime API, please feel free to contact me at [solomonnjobvu1@gmail.com](). I appreciate your feedback and support. Thank you for using the Movie Showtime API! 😊
+### Conclusion
+Explore the Movie Showtime API to seamlessly integrate movie showtime information into your applications and enhance the cinema-going experience for users in Zambia.
