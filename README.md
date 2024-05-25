@@ -10,7 +10,7 @@ The Movie Showtime API enables you to:
 4. Access additional information about a movie, including genre, duration, stars, directors, and release date.
 
 ### Base URL
-The base URL for the API is [movieshowtimeapi](https://movieshowtimeapi.cyclic.app/api/). All requests and responses are in JSON format.
+The base URL for the API is [movieshowtimeapi](https://movie-showtime-api.onrender.com/api). All requests and responses are in JSON format.
 
 ### Endpoints
 #### 1. /cinemas
